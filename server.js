@@ -5,11 +5,12 @@ const cors = require("cors");
 const port = process.env.PORT || 8080;
 const bodyParser = require("body-parser");
 const path = require("path");
-
+const client = require('./database');
 
 const app = express();
 app.use(cors());
 
+client.connect();
 
 // database connection
 // mongoose.Promise = global.Promise;
@@ -17,6 +18,7 @@ app.use(cors());
 //   .connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
 //   .then((res) => console.log("Connected to DB Successfully"))
 //   .catch((err) => console.log(err));
+// client.connect();
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: "true" }));
