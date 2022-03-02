@@ -81,7 +81,7 @@ export class DifferSignupVerifyComponent implements OnInit {
     console.log(this.FULL_OTP);
     
     let reqData = {
-      email:localStorage.getItem('email'),
+      email:sessionStorage.getItem('email'),
       FULL_OTP: this.FULL_OTP,
     }
     this.differServiceList.differSignUpVerifyOTP(reqData).subscribe((result:any) => {

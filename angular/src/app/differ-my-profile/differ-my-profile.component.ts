@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { DifferServiceList } from './../differ-service-list/differ-service-list.service';
 // import { AuthService } from './../register/auth.service';
 import swal from 'sweetalert2';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-differ-my-profile',
@@ -43,10 +44,12 @@ export class DifferMyProfileComponent implements OnInit {
     });
 
     this.MyNetworkForm = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(70) ]),
-      password: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(15) ]),
-      serviceAddress: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(70) ]),
+      SSID: new FormControl('', [Validators.required ]),
+      NetworkPassword: new FormControl('', [Validators.required ]),
     });
+
+    this.prefilledValue();
+    this.getNetworkInfo();
   }
 
   get myProfileFormHas(): { [key: string]: AbstractControl } {
@@ -67,7 +70,7 @@ export class DifferMyProfileComponent implements OnInit {
       return;
     }
     let reqData = {
-      email:localStorage.getItem('email'),
+      email:sessionStorage.getItem('email'),
       firstName: this.myProfileForm.value.firstName,
       lastName: this.myProfileForm.value.lastName,
       password: this.myProfileForm.value.password,
@@ -85,6 +88,21 @@ export class DifferMyProfileComponent implements OnInit {
     });
   }
 
+  formattedDate:any;
+  prefilledValue() {
+    let dt = sessionStorage.getItem('birthday');
+    if(dt) {
+      this.formattedDate = this.convertDate(dt);
+    }
+    this.myProfileForm.patchValue({
+      firstName: sessionStorage.getItem('firstName') ,
+      lastName: sessionStorage.getItem('lastName') ,
+      password: sessionStorage.getItem('password') ,
+      serviceAddress: sessionStorage.getItem('address') ,
+      birthday : new Date(this.formattedDate[0]+'/'+this.formattedDate[1]+'/'+this.formattedDate[2])
+    });
+  }
+
   handleSubmit2() {
     this.submitted2 = true;
     if (this.mySubscriptionForm.invalid) {
@@ -99,6 +117,37 @@ export class DifferMyProfileComponent implements OnInit {
     }
   }
 
+  convertDate(str:any) {
+    var date = new Date(str),
+      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+      day = ("0" + date.getDate()).slice(-2);
+    return [date.getFullYear(), mnth, day];
+  }
+
+  DeviceArr:any = [];
+  getNetworkInfo() {
+    let reqObj = {
+      email:sessionStorage.getItem('email')
+    }
+    this.differServiceList.differGetNetworkInfo(reqObj).subscribe((result:any) => {
+      console.log(result,"result>>>>>>>>>>>>>>>>>");
+      if(result['code'] == 200 ) {
+        
+        result.data.devices.forEach((element:any) => {
+          this.DeviceArr.push(element)
+        });
+         this.MyNetworkForm.patchValue({
+          SSID: result.data.ssid,
+          NetworkPassword :result.data.wpa2_key,
+         });
+        console.log(this.MyNetworkForm.value,"value>");
+        
+      }
+    }, 
+    (err:any) => {
+      console.log(err,"error");
+    });
+  }
   
 
 }

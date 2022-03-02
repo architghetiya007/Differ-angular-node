@@ -33,6 +33,17 @@ export class DifferCustomerInformationComponent implements OnInit {
       serviceAddress: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(70)]),
       birthday: new FormControl('', [Validators.required,]),
     });
+
+    this.prefilledEmail();
+  }
+
+  prefilledEmail() {
+    if(sessionStorage.getItem('email')) {
+      this.InformationForm.patchValue({
+        email: sessionStorage.getItem('email'),
+        serviceAddress: sessionStorage.getItem('address')
+      })
+    }
   }
 
   get informationFormHas(): { [key: string]: AbstractControl } {
@@ -45,7 +56,12 @@ export class DifferCustomerInformationComponent implements OnInit {
       return;
     }
     console.log(this.InformationForm.value);
-
+ 
+    sessionStorage.setItem('birthday',this.InformationForm.value.birthday);
+    sessionStorage.setItem('firstName',this.InformationForm.value.firstName);
+    sessionStorage.setItem('lastName',this.InformationForm.value.lastName);
+    sessionStorage.setItem('password',this.InformationForm.value.password);
+    
     let reqData = {
       email: this.InformationForm.value.email,
       firstName: this.InformationForm.value.firstName,

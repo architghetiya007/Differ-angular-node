@@ -83,10 +83,10 @@ class DifferSignupComponent {
             if (this.signupForm.invalid) {
                 return;
             }
-            localStorage.setItem('email', this.signupForm.value.email);
+            sessionStorage.setItem('email', this.signupForm.value.email);
             let reqData = {
-                address: localStorage.getItem('address'),
-                selectedId: localStorage.getItem('selectedId'),
+                address: sessionStorage.getItem('address'),
+                selectedId: sessionStorage.getItem('selectedId'),
                 email: this.signupForm.value.email,
             };
             this.differServiceList.differCreateCustomer(reqData).subscribe((result) => Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
@@ -247,7 +247,7 @@ class DifferSignupVerifyComponent {
         this.FULL_OTP = this.OTP.join('');
         console.log(this.FULL_OTP);
         let reqData = {
-            email: localStorage.getItem('email'),
+            email: sessionStorage.getItem('email'),
             FULL_OTP: this.FULL_OTP,
         };
         this.differServiceList.differSignUpVerifyOTP(reqData).subscribe((result) => {
@@ -402,25 +402,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function DifferMyProfileComponent_mat_error_14_mat_error_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " First Name is Required ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_mat_error_14_mat_error_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " First Name between 3 to 30 characters");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_mat_error_14_mat_error_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " First Name between 3 to 30 characters");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_mat_error_14_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_mat_error_14_mat_error_1_Template, 2, 0, "mat-error", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_mat_error_14_mat_error_2_Template, 2, 0, "mat-error", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_mat_error_14_mat_error_3_Template, 2, 0, "mat-error", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_mat_error_14_mat_error_1_Template, 2, 0, "mat-error", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_mat_error_14_mat_error_2_Template, 2, 0, "mat-error", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_mat_error_14_mat_error_3_Template, 2, 0, "mat-error", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
@@ -432,25 +432,25 @@ function DifferMyProfileComponent_mat_error_14_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r0.myProfileFormHas.firstName.errors == null ? null : ctx_r0.myProfileFormHas.firstName.errors.maxlength);
 } }
 function DifferMyProfileComponent_mat_error_18_mat_error_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Last Name is Required ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_mat_error_18_mat_error_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Last Name between 3 to 30 characters");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_mat_error_18_mat_error_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Last Name between 3 to 30 characters");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_mat_error_18_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_mat_error_18_mat_error_1_Template, 2, 0, "mat-error", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_mat_error_18_mat_error_2_Template, 2, 0, "mat-error", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_mat_error_18_mat_error_3_Template, 2, 0, "mat-error", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_mat_error_18_mat_error_1_Template, 2, 0, "mat-error", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_mat_error_18_mat_error_2_Template, 2, 0, "mat-error", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_mat_error_18_mat_error_3_Template, 2, 0, "mat-error", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
@@ -462,25 +462,25 @@ function DifferMyProfileComponent_mat_error_18_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r1.myProfileFormHas.lastName.errors == null ? null : ctx_r1.myProfileFormHas.lastName.errors.maxlength);
 } }
 function DifferMyProfileComponent_mat_error_22_mat_error_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Password is Required ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_mat_error_22_mat_error_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Password between 5 to 15 characters");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_mat_error_22_mat_error_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Password between 5 to 15 characters");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_mat_error_22_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_mat_error_22_mat_error_1_Template, 2, 0, "mat-error", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_mat_error_22_mat_error_2_Template, 2, 0, "mat-error", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_mat_error_22_mat_error_3_Template, 2, 0, "mat-error", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_mat_error_22_mat_error_1_Template, 2, 0, "mat-error", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_mat_error_22_mat_error_2_Template, 2, 0, "mat-error", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_mat_error_22_mat_error_3_Template, 2, 0, "mat-error", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
@@ -492,25 +492,25 @@ function DifferMyProfileComponent_mat_error_22_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r2.myProfileFormHas.password.errors == null ? null : ctx_r2.myProfileFormHas.password.errors.maxlength);
 } }
 function DifferMyProfileComponent_mat_error_26_mat_error_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "Service Address is Required ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_mat_error_26_mat_error_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "Service Address between 5 to 70 characters");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_mat_error_26_mat_error_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error", 31);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, "Service Address between 5 to 70 characters");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_mat_error_26_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_mat_error_26_mat_error_1_Template, 2, 0, "mat-error", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_mat_error_26_mat_error_2_Template, 2, 0, "mat-error", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_mat_error_26_mat_error_3_Template, 2, 0, "mat-error", 27);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_mat_error_26_mat_error_1_Template, 2, 0, "mat-error", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_mat_error_26_mat_error_2_Template, 2, 0, "mat-error", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_mat_error_26_mat_error_3_Template, 2, 0, "mat-error", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
@@ -536,25 +536,25 @@ function DifferMyProfileComponent_mat_error_33_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r5.myProfileFormHas.birthday.errors == null ? null : ctx_r5.myProfileFormHas.birthday.errors.required);
 } }
 function DifferMyProfileComponent_div_50_small_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Name is Required ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_div_50_small_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Name between 5 to 30 characters ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_div_50_small_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Name between 5 to 30 characters");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_div_50_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_div_50_small_1_Template, 2, 0, "small", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_div_50_small_2_Template, 2, 0, "small", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_div_50_small_3_Template, 2, 0, "small", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_div_50_small_1_Template, 2, 0, "small", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_div_50_small_2_Template, 2, 0, "small", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_div_50_small_3_Template, 2, 0, "small", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
@@ -566,25 +566,25 @@ function DifferMyProfileComponent_div_50_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r6.mySubscriptionFormHas.name.errors == null ? null : ctx_r6.mySubscriptionFormHas.name.errors.maxlength);
 } }
 function DifferMyProfileComponent_div_55_small_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Password is Required ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_div_55_small_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Password between 5 to 15 characters ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_div_55_small_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Password between 5 to 15 characters");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_div_55_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_div_55_small_1_Template, 2, 0, "small", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_div_55_small_2_Template, 2, 0, "small", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_div_55_small_3_Template, 2, 0, "small", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_div_55_small_1_Template, 2, 0, "small", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_div_55_small_2_Template, 2, 0, "small", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_div_55_small_3_Template, 2, 0, "small", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
@@ -596,25 +596,25 @@ function DifferMyProfileComponent_div_55_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r7.mySubscriptionFormHas.password.errors == null ? null : ctx_r7.mySubscriptionFormHas.password.errors.maxlength);
 } }
 function DifferMyProfileComponent_div_60_small_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Service Address is Required ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_div_60_small_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Service Address between 5 to 70 characters ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_div_60_small_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Service Address between 5 to 70 characters");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_div_60_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_div_60_small_1_Template, 2, 0, "small", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_div_60_small_2_Template, 2, 0, "small", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_div_60_small_3_Template, 2, 0, "small", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_div_60_small_1_Template, 2, 0, "small", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_div_60_small_2_Template, 2, 0, "small", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_div_60_small_3_Template, 2, 0, "small", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
@@ -626,94 +626,55 @@ function DifferMyProfileComponent_div_60_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r8.mySubscriptionFormHas.serviceAddress.errors == null ? null : ctx_r8.mySubscriptionFormHas.serviceAddress.errors.maxlength);
 } }
 function DifferMyProfileComponent_div_77_small_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Name is Required ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} }
-function DifferMyProfileComponent_div_77_small_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Name between 5 to 30 characters ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} }
-function DifferMyProfileComponent_div_77_small_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Name between 5 to 30 characters");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " SSID is Required ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_div_77_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_div_77_small_1_Template, 2, 0, "small", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_div_77_small_2_Template, 2, 0, "small", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_div_77_small_3_Template, 2, 0, "small", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_div_77_small_1_Template, 2, 0, "small", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r9.MyNetworkFormHas.name.errors == null ? null : ctx_r9.MyNetworkFormHas.name.errors.required);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r9.MyNetworkFormHas.name.errors == null ? null : ctx_r9.MyNetworkFormHas.name.errors.minlength);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r9.MyNetworkFormHas.name.errors == null ? null : ctx_r9.MyNetworkFormHas.name.errors.maxlength);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r9.MyNetworkFormHas.SSID.errors == null ? null : ctx_r9.MyNetworkFormHas.SSID.errors.required);
 } }
 function DifferMyProfileComponent_div_82_small_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Password is Required ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} }
-function DifferMyProfileComponent_div_82_small_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Password between 5 to 15 characters ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} }
-function DifferMyProfileComponent_div_82_small_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Password between 5 to 15 characters");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Network Password is Required ");
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } }
 function DifferMyProfileComponent_div_82_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_div_82_small_1_Template, 2, 0, "small", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_div_82_small_2_Template, 2, 0, "small", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_div_82_small_3_Template, 2, 0, "small", 29);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_div_82_small_1_Template, 2, 0, "small", 32);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r10.MyNetworkFormHas.password.errors == null ? null : ctx_r10.MyNetworkFormHas.password.errors.required);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r10.MyNetworkFormHas.password.errors == null ? null : ctx_r10.MyNetworkFormHas.password.errors.minlength);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r10.MyNetworkFormHas.password.errors == null ? null : ctx_r10.MyNetworkFormHas.password.errors.maxlength);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r10.MyNetworkFormHas.NetworkPassword.errors == null ? null : ctx_r10.MyNetworkFormHas.NetworkPassword.errors.required);
 } }
-function DifferMyProfileComponent_div_87_small_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Service Address is Required ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} }
-function DifferMyProfileComponent_div_87_small_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Service Address between 5 to 70 characters ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} }
-function DifferMyProfileComponent_div_87_small_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 30);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " Service Address between 5 to 70 characters");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-} }
-function DifferMyProfileComponent_div_87_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_div_87_small_1_Template, 2, 0, "small", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, DifferMyProfileComponent_div_87_small_2_Template, 2, 0, "small", 29);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](3, DifferMyProfileComponent_div_87_small_3_Template, 2, 0, "small", 29);
+function DifferMyProfileComponent_span_87_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    const ele_r37 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r11.MyNetworkFormHas.serviceAddress.errors == null ? null : ctx_r11.MyNetworkFormHas.serviceAddress.errors.required);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate2"]("", ele_r37.ip, " ", ele_r37.hostname, "");
+} }
+function DifferMyProfileComponent_div_88_small_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "small", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1, " My Devices is Required ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} }
+function DifferMyProfileComponent_div_88_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, DifferMyProfileComponent_div_88_small_1_Template, 2, 0, "small", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r11.MyNetworkFormHas.serviceAddress.errors == null ? null : ctx_r11.MyNetworkFormHas.serviceAddress.errors.minlength);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r11.MyNetworkFormHas.serviceAddress.errors == null ? null : ctx_r11.MyNetworkFormHas.serviceAddress.errors.maxlength);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx_r12.MyNetworkFormHas.MyDevice.errors == null ? null : ctx_r12.MyNetworkFormHas.MyDevice.errors.required);
 } }
 class DifferMyProfileComponent {
     constructor(differServiceList) {
@@ -721,6 +682,7 @@ class DifferMyProfileComponent {
         this.submitted1 = false;
         this.submitted2 = false;
         this.submitted3 = false;
+        this.DeviceArr = [];
     }
     ngOnInit() {
         this.myProfileForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroup"]({
@@ -736,10 +698,11 @@ class DifferMyProfileComponent {
             serviceAddress: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].minLength(5), _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].maxLength(70)]),
         });
         this.MyNetworkForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroup"]({
-            name: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].minLength(5), _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].maxLength(70)]),
-            password: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].minLength(5), _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].maxLength(15)]),
-            serviceAddress: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].minLength(5), _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].maxLength(70)]),
+            SSID: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required]),
+            NetworkPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required]),
         });
+        this.prefilledValue();
+        this.getNetworkInfo();
     }
     get myProfileFormHas() {
         return this.myProfileForm.controls;
@@ -756,7 +719,7 @@ class DifferMyProfileComponent {
             return;
         }
         let reqData = {
-            email: localStorage.getItem('email'),
+            email: sessionStorage.getItem('email'),
             firstName: this.myProfileForm.value.firstName,
             lastName: this.myProfileForm.value.lastName,
             password: this.myProfileForm.value.password,
@@ -772,6 +735,19 @@ class DifferMyProfileComponent {
             console.log(err, "error");
         });
     }
+    prefilledValue() {
+        let dt = sessionStorage.getItem('birthday');
+        if (dt) {
+            this.formattedDate = this.convertDate(dt);
+        }
+        this.myProfileForm.patchValue({
+            firstName: sessionStorage.getItem('firstName'),
+            lastName: sessionStorage.getItem('lastName'),
+            password: sessionStorage.getItem('password'),
+            serviceAddress: sessionStorage.getItem('address'),
+            birthday: new Date(this.formattedDate[0] + '/' + this.formattedDate[1] + '/' + this.formattedDate[2])
+        });
+    }
     handleSubmit2() {
         this.submitted2 = true;
         if (this.mySubscriptionForm.invalid) {
@@ -784,9 +760,33 @@ class DifferMyProfileComponent {
             return;
         }
     }
+    convertDate(str) {
+        var date = new Date(str), mnth = ("0" + (date.getMonth() + 1)).slice(-2), day = ("0" + date.getDate()).slice(-2);
+        return [date.getFullYear(), mnth, day];
+    }
+    getNetworkInfo() {
+        let reqObj = {
+            email: sessionStorage.getItem('email')
+        };
+        this.differServiceList.differGetNetworkInfo(reqObj).subscribe((result) => {
+            console.log(result, "result>>>>>>>>>>>>>>>>>");
+            if (result['code'] == 200) {
+                result.data.devices.forEach((element) => {
+                    this.DeviceArr.push(element);
+                });
+                this.MyNetworkForm.patchValue({
+                    SSID: result.data.ssid,
+                    NetworkPassword: result.data.wpa2_key,
+                });
+                console.log(this.MyNetworkForm.value, "value>");
+            }
+        }, (err) => {
+            console.log(err, "error");
+        });
+    }
 }
 DifferMyProfileComponent.ɵfac = function DifferMyProfileComponent_Factory(t) { return new (t || DifferMyProfileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_differ_service_list_differ_service_list_service__WEBPACK_IMPORTED_MODULE_3__["DifferServiceList"])); };
-DifferMyProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: DifferMyProfileComponent, selectors: [["app-differ-my-profile"]], decls: 91, vars: 16, consts: [[1, "ml-5", "justify-content-center", "text-center"], ["label", "My Profile"], [1, "row", "mt-5", "title"], [1, "col-md-6", "mx-auto"], [1, "card", "rounded-20"], [1, "card-header"], [1, "mb-0"], [1, "card-body"], [1, "form", 3, "formGroup", "ngSubmit"], [1, "form-group", "rounded-15"], [1, "full-width"], ["matInput", "", "placeholder", "First Name", "formControlName", "firstName", "required", ""], [4, "ngIf"], ["matInput", "", "placeholder", "Last Name", "formControlName", "lastName", "required", ""], ["type", "password", "matInput", "", "placeholder", "password", "formControlName", "password", "name", "password", "required", ""], ["matInput", "", "placeholder", "serviceAddress", "formControlName", "serviceAddress", "name", "serviceAddress", "required", ""], ["matInput", "", "placeholder", "Your birthday", "formControlName", "birthday", "required", "", 3, "matDatepicker"], ["matSuffix", "", 3, "for"], ["picker", ""], [1, ""], ["type", "submit", 1, "btn", "btn-success", "float-left"], ["label", "My Subscription"], ["for", ""], ["type", "text", "formControlName", "name", "name", "name", "required", "", 1, "form-control"], ["type", "text", "formControlName", "password", "name", "name", "required", "", 1, "form-control"], ["type", "text", "formControlName", "serviceAddress", "name", "name", "required", "", 1, "form-control"], ["label", "My Network"], ["class", "error-message", 4, "ngIf"], [1, "error-message"], ["class", "text-danger", 4, "ngIf"], [1, "text-danger"]], template: function DifferMyProfileComponent_Template(rf, ctx) { if (rf & 1) {
+DifferMyProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: DifferMyProfileComponent, selectors: [["app-differ-my-profile"]], decls: 92, vars: 17, consts: [[1, "ml-5", "justify-content-center", "text-center"], ["label", "My Profile"], [1, "row", "mt-5", "title"], [1, "col-md-6", "mx-auto"], [1, "card", "rounded-20"], [1, "card-header"], [1, "mb-0"], [1, "card-body"], [1, "form", 3, "formGroup", "ngSubmit"], [1, "form-group", "rounded-15"], [1, "full-width"], ["matInput", "", "placeholder", "First Name", "formControlName", "firstName", "required", ""], [4, "ngIf"], ["matInput", "", "placeholder", "Last Name", "formControlName", "lastName", "required", ""], ["type", "password", "matInput", "", "placeholder", "password", "formControlName", "password", "name", "password", "required", ""], ["matInput", "", "placeholder", "serviceAddress", "formControlName", "serviceAddress", "name", "serviceAddress", "required", ""], ["matInput", "", "placeholder", "Your birthday", "formControlName", "birthday", "required", "", 3, "matDatepicker"], ["matSuffix", "", 3, "for"], ["picker", ""], [1, ""], ["type", "submit", 1, "btn", "btn-success", "float-left"], ["label", "My Subscription"], ["for", ""], ["type", "text", "formControlName", "name", "name", "name", "required", "", 1, "form-control"], ["type", "text", "formControlName", "password", "name", "name", "required", "", 1, "form-control"], ["type", "text", "formControlName", "serviceAddress", "name", "name", "required", "", 1, "form-control"], ["label", "My Network"], ["type", "text", "formControlName", "SSID", "name", "SSID", "required", "", 1, "form-control"], ["type", "password", "formControlName", "NetworkPassword", "name", "name", "required", "", 1, "form-control"], [4, "ngFor", "ngForOf"], ["class", "error-message", 4, "ngIf"], [1, "error-message"], ["class", "text-danger", 4, "ngIf"], [1, "text-danger"]], template: function DifferMyProfileComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](0, "app-differ-nav-bar");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "mat-tab-group", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "mat-tab", 1);
@@ -894,7 +894,7 @@ DifferMyProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵ�
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](67, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](68, "div", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](69, "h3", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](70, "Customer Information");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](70, "Network Information");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](71, "div", 7);
@@ -902,28 +902,30 @@ DifferMyProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵ�
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngSubmit", function DifferMyProfileComponent_Template_form_ngSubmit_72_listener() { return ctx.handleSubmit3(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](73, "div", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](74, "label", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](75, "Name");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](75, "SSID");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](76, "input", 23);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](76, "input", 27);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](77, DifferMyProfileComponent_div_77_Template, 4, 3, "div", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](77, DifferMyProfileComponent_div_77_Template, 2, 1, "div", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](78, "div", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](79, "label", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](80, "Password");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](80, "Network Password");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](81, "input", 24);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](81, "input", 28);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](82, DifferMyProfileComponent_div_82_Template, 4, 3, "div", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](82, DifferMyProfileComponent_div_82_Template, 2, 1, "div", 12);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](83, "div", 9);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](84, "label", 22);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](85, "Service Address");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](85, "My Devices");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](86, "input", 25);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](86, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](87, DifferMyProfileComponent_span_87_Template, 2, 2, "span", 29);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](87, DifferMyProfileComponent_div_87_Template, 4, 3, "div", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](88, "div", 19);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](89, "button", 20);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](90, "Next");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](88, DifferMyProfileComponent_div_88_Template, 2, 1, "div", 12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](89, "div", 19);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](90, "button", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](91, " Submit ");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
@@ -962,12 +964,14 @@ DifferMyProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵ�
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](12);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("formGroup", ctx.MyNetworkForm);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.submitted3 && (ctx.MyNetworkFormHas.name == null ? null : ctx.MyNetworkFormHas.name.errors));
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.submitted3 && (ctx.MyNetworkFormHas.SSID == null ? null : ctx.MyNetworkFormHas.SSID.errors));
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.submitted3 && (ctx.MyNetworkFormHas.password == null ? null : ctx.MyNetworkFormHas.password.errors));
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.submitted3 && (ctx.MyNetworkFormHas.NetworkPassword == null ? null : ctx.MyNetworkFormHas.NetworkPassword.errors));
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.submitted3 && (ctx.MyNetworkFormHas.serviceAddress == null ? null : ctx.MyNetworkFormHas.serviceAddress.errors));
-    } }, directives: [_differ_nav_bar_differ_nav_bar_component__WEBPACK_IMPORTED_MODULE_4__["DifferNavBarComponent"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_5__["MatTabGroup"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_5__["MatTab"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormField"], _angular_material_input__WEBPACK_IMPORTED_MODULE_7__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["RequiredValidator"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_9__["MatDatepickerInput"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_9__["MatDatepickerToggle"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatSuffix"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_9__["MatDatepicker"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatError"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJkaWZmZXItbXktcHJvZmlsZS5jb21wb25lbnQuY3NzIn0= */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.DeviceArr);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", ctx.submitted3 && (ctx.MyNetworkFormHas.MyDevice == null ? null : ctx.MyNetworkFormHas.MyDevice.errors));
+    } }, directives: [_differ_nav_bar_differ_nav_bar_component__WEBPACK_IMPORTED_MODULE_4__["DifferNavBarComponent"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_5__["MatTabGroup"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_5__["MatTab"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormField"], _angular_material_input__WEBPACK_IMPORTED_MODULE_7__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["RequiredValidator"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_9__["MatDatepickerInput"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_9__["MatDatepickerToggle"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatSuffix"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_9__["MatDatepicker"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatError"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJkaWZmZXItbXktcHJvZmlsZS5jb21wb25lbnQuY3NzIn0= */"] });
 
 
 /***/ }),
@@ -1337,6 +1341,15 @@ class DifferCustomerInformationComponent {
             serviceAddress: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].minLength(5), _angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].maxLength(70)]),
             birthday: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required,]),
         });
+        this.prefilledEmail();
+    }
+    prefilledEmail() {
+        if (sessionStorage.getItem('email')) {
+            this.InformationForm.patchValue({
+                email: sessionStorage.getItem('email'),
+                serviceAddress: sessionStorage.getItem('address')
+            });
+        }
     }
     get informationFormHas() {
         return this.InformationForm.controls;
@@ -1347,6 +1360,10 @@ class DifferCustomerInformationComponent {
             return;
         }
         console.log(this.InformationForm.value);
+        sessionStorage.setItem('birthday', this.InformationForm.value.birthday);
+        sessionStorage.setItem('firstName', this.InformationForm.value.firstName);
+        sessionStorage.setItem('lastName', this.InformationForm.value.lastName);
+        sessionStorage.setItem('password', this.InformationForm.value.password);
         let reqData = {
             email: this.InformationForm.value.email,
             firstName: this.InformationForm.value.firstName,
@@ -1671,6 +1688,9 @@ class DifferServiceList {
     differCustomerInformation(data) {
         return this.http.put("http://localhost:3000/api/v1/auth/chargebee-save-user-detail", data);
     }
+    differGetNetworkInfo(data) {
+        return this.http.put("http://localhost:3000/api/v1/auth/chargebee-network", data);
+    }
 }
 DifferServiceList.ɵfac = function DifferServiceList_Factory(t) { return new (t || DifferServiceList)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
 DifferServiceList.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: DifferServiceList, factory: DifferServiceList.ɵfac, providedIn: 'root' });
@@ -1741,12 +1761,12 @@ class DifferServiceListComponent {
         this.serviceItemList = [];
     }
     ngOnInit() {
-        this.address = localStorage.getItem('address');
+        this.address = sessionStorage.getItem('address');
         this.getItemList();
     }
     handleServiceClick(data) {
         // console.log("data>>>>>>>>>>>>>>>>>>>",data);
-        localStorage.setItem("selectedId", data.item.id);
+        sessionStorage.setItem("selectedId", data.item.id);
         this.router.navigate(['/differ-signup']);
     }
     getItemList() {
@@ -1809,28 +1829,32 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const _c0 = ["address"];
+const _c1 = ["city"];
 function DifferServiceAddressComponent_div_14_small_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "small", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "small", 17);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Address is Required ");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } }
 function DifferServiceAddressComponent_div_14_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, DifferServiceAddressComponent_div_14_small_1_Template, 2, 0, "small", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, DifferServiceAddressComponent_div_14_small_1_Template, 2, 0, "small", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r0.serviceAddressFormHas.address.errors == null ? null : ctx_r0.serviceAddressFormHas.address.errors.required);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx_r1.serviceAddressFormHas.address.errors == null ? null : ctx_r1.serviceAddressFormHas.address.errors.required);
 } }
 class DifferServiceAddressComponent {
     constructor(router) {
         this.router = router;
+        this.fullAddress = '';
         this.submitted = false;
     }
     ngOnInit() {
         this.serviceAddressForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroup"]({
             address: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required]),
+            city: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', []),
         });
     }
     get serviceAddressFormHas() {
@@ -1838,40 +1862,59 @@ class DifferServiceAddressComponent {
     }
     handleSubmit() {
         this.submitted = true;
+        this.serviceAddressForm.patchValue({
+            address: this.viewChildAddress.nativeElement.value,
+            city: this.viewChildCity.nativeElement.value
+        });
         if (this.serviceAddressForm.invalid) {
             return;
         }
-        console.log(this.serviceAddressForm.value);
-        localStorage.removeItem('address');
-        localStorage.setItem("address", this.serviceAddressForm.value.address);
+        this.fullAddress = this.serviceAddressForm.value.address + ' ' + this.serviceAddressForm.value.city;
+        sessionStorage.removeItem('address');
+        sessionStorage.setItem("address", this.fullAddress);
         this.router.navigate(['/differ-service-list']);
+    }
+    cityChange(event) {
+        console.log(event.target.value, "event>>>>>>");
+        this.serviceAddressForm.patchValue({
+            city: event.target.value
+        });
     }
 }
 DifferServiceAddressComponent.ɵfac = function DifferServiceAddressComponent_Factory(t) { return new (t || DifferServiceAddressComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
-DifferServiceAddressComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: DifferServiceAddressComponent, selectors: [["app-differ-service-address"]], decls: 18, vars: 2, consts: [["rel", "stylesheet", "type", "text/css", "href", "http://ws1.postescanada-canadapost.ca/css/addresscomplete-2.30.min.css?key=ac53-ck32-re78-gc78"], [1, "row", "mt-5", "title"], [1, "col-md-6", "mx-auto"], [1, "card", "rounded-20"], [1, "card-header"], [1, "mb-0"], [1, "card-body"], [1, "form", 3, "formGroup", "ngSubmit"], [1, "form-group", "rounded-15"], ["for", ""], ["type", "text", "formControlName", "address", "name", "address", "required", "", 1, "form-control"], [4, "ngIf"], [1, ""], ["type", "submit", 1, "btn", "btn-success", "float-right"], ["class", "text-danger", 4, "ngIf"], [1, "text-danger"]], template: function DifferServiceAddressComponent_Template(rf, ctx) { if (rf & 1) {
+DifferServiceAddressComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: DifferServiceAddressComponent, selectors: [["app-differ-service-address"]], viewQuery: function DifferServiceAddressComponent_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_c0, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_c1, 1);
+    } if (rf & 2) {
+        let _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.viewChildAddress = _t.first);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.viewChildCity = _t.first);
+    } }, decls: 21, vars: 2, consts: [[1, "row", "mt-5", "title"], [1, "col-md-6", "mx-auto"], [1, "card", "rounded-20"], [1, "card-header"], [1, "mb-0"], [1, "card-body"], [1, "form", 3, "formGroup", "ngSubmit"], [1, "form-group", "rounded-15"], ["for", ""], ["type", "text", "formControlName", "address", "name", "address", "required", "", 1, "form-control"], ["address", ""], [4, "ngIf"], ["type", "hidden", "formControlName", "city", "name", "city", 1, "form-control"], ["city", ""], [1, ""], ["type", "submit", 1, "btn", "btn-success", "float-right"], ["class", "text-danger", 4, "ngIf"], [1, "text-danger"]], template: function DifferServiceAddressComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "app-differ-nav-bar");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "link", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "h3", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](7, "Enter your address to determine service");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "h3", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Enter your address to determine service");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "form", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngSubmit", function DifferServiceAddressComponent_Template_form_ngSubmit_9_listener() { return ctx.handleSubmit(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "div", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "label", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, "Enter Your Address");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "form", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngSubmit", function DifferServiceAddressComponent_Template_form_ngSubmit_8_listener() { return ctx.handleSubmit(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "label", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Enter Your Address");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](13, "input", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](12, "input", 9, 10);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](14, DifferServiceAddressComponent_div_14_Template, 2, 1, "div", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "div", 12);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "button", 13);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, "Check Service");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "div", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](16, "input", 12, 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "div", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "button", 15);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](20, "Check Service");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -1880,9 +1923,9 @@ DifferServiceAddressComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](8);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.serviceAddressForm);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.submitted && (ctx.serviceAddressFormHas.address == null ? null : ctx.serviceAddressFormHas.address.errors));
     } }, directives: [_differ_nav_bar_differ_nav_bar_component__WEBPACK_IMPORTED_MODULE_3__["DifferNavBarComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_forms_forms_ba"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_0__["RequiredValidator"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJkaWZmZXItc2VydmljZS1hZGRyZXNzLmNvbXBvbmVudC5jc3MifQ== */"] });
 
