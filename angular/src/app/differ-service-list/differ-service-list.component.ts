@@ -14,7 +14,8 @@ import swal from 'sweetalert2';
 @Component({
   selector: 'app-differ-service-list',
   templateUrl: './differ-service-list.component.html',
-  styleUrls: ['./differ-service-list.component.css']
+  styles: [
+  ]
 })
 export class DifferServiceListComponent implements OnInit {
   public address : any = "";

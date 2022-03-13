@@ -5,7 +5,8 @@ import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.css']
+  styles: [
+  ]
 })
 export class CheckoutComponent implements OnInit {
   first_name: any;

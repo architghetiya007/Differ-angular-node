@@ -15,7 +15,8 @@ import * as moment from 'moment';
 @Component({
   selector: 'app-differ-my-profile',
   templateUrl: './differ-my-profile.component.html',
-  styleUrls: ['./differ-my-profile.component.css']
+  styles: [
+  ]
 })
 export class DifferMyProfileComponent implements OnInit {
 

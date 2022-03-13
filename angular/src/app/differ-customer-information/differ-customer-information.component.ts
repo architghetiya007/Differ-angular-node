@@ -14,7 +14,8 @@ import swal from 'sweetalert2';
 @Component({
   selector: 'app-differ-customer-information',
   templateUrl: './differ-customer-information.component.html',
-  styleUrls: ['./differ-customer-information.component.css']
+  styles: [
+  ]
 })
 export class DifferCustomerInformationComponent implements OnInit {
 
