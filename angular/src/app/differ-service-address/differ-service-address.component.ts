@@ -13,7 +13,8 @@ import swal from 'sweetalert2';
 @Component({
   selector: 'app-differ-service-address',
   templateUrl: './differ-service-address.component.html',
-  styleUrls: ['./differ-service-address.component.css']
+  styles: [
+  ]
 })
 export class DifferServiceAddressComponent implements OnInit {
 
