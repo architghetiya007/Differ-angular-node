@@ -14,7 +14,8 @@ import swal from 'sweetalert2';
 @Component({
   selector: 'app-differ-signup',
   templateUrl: './differ-signup.component.html',
-  styleUrls: ['./differ-signup.component.css']
+  styles: [
+  ]
 })
 export class DifferSignupComponent implements OnInit {
 

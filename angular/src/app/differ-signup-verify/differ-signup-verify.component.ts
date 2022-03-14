@@ -14,7 +14,8 @@ import { DifferServiceList } from './../differ-service-list/differ-service-list.
 @Component({
   selector: 'app-differ-signup-verify',
   templateUrl: './differ-signup-verify.component.html',
-  styleUrls: ['./differ-signup-verify.component.css']
+  styles: [
+  ]
 })
 
 export class DifferSignupVerifyComponent implements OnInit {
