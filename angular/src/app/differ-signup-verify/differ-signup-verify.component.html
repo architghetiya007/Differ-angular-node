@@ -1,4 +1,35 @@
-<div class="row mt-5 title">
+<div class="d-flex justify-content-center align-items-center flex-column h-100">
+  <p class="medium-text">
+    Enter the code that was sent to<br />your email address
+  </p>
+  <form
+    [formGroup]="signupVerifyForm"
+    (ngSubmit)="handleSubmit()"
+    class="form signup-verify"
+  >
+    <div class="d-flex flex-row">
+      <div class="form-group" *ngFor="let input of formInput; index as i">
+        <input
+          type="text"
+          class="form-control"
+          name="emailOTP"
+          formControlName="{{ input }}"
+          maxlength="1"
+          (keyup)="keyUpEvent($event, i)"
+          #formRow
+        />
+      </div>
+    </div>
+    <button class="btn btn-success w-100" type="submit">Verify</button>
+    <div class="text-center mt-4">
+      <a routerLink="/differ-signup-verify" class="link"
+        >didn't receive your code?
+      </a>
+    </div>
+  </form>
+</div>
+
+<!-- <div class="row mt-5 title">
   <div class="col-md-6 mx-auto">
     <div class="card rounded-20">
       <div class="card-header">
@@ -26,14 +57,15 @@
                 required
               />
             </div>
-          </div>
-          <!-- <div *ngIf="submitted && signupVerifyFormHas.emailOTP?.errors">
+          </div> -->
+
+<!-- <div *ngIf="submitted && signupVerifyFormHas.emailOTP?.errors">
                          <small *ngIf="signupVerifyFormHas.emailOTP.errors?.required" class="text-danger" > OTP is Required </small>
                          <small *ngIf="signupVerifyFormHas.emailOTP.errors?.min" class="text-danger" > OTP need to be 6 digit </small>
                          <small *ngIf="signupVerifyFormHas.emailOTP.errors?.max" class="text-danger" > OTP need to be 6 digit</small>
                      </div> -->
 
-          <div class="">
+<!-- <div class="">
             <button type="submit" class="btn btn-success">Verify</button>
             <a
               routerLink="/differ-signup-verify"
@@ -45,4 +77,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

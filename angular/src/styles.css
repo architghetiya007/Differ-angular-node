@@ -381,6 +381,77 @@ ul {
 }
 /* Differ Signup End */
 
+/* Differ Signup Verify Start */
+.form.signup-verify {
+  width: 500px;
+}
+
+.form.signup-verify .form-control {
+  color: #333;
+  padding: 30px 20px;
+  font-size: calc(13px + (18 - 13) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  opacity: 0.85;
+  border-radius: 8px !important;
+  -webkit-border-radius: 8px !important;
+  -moz-border-radius: 8px !important;
+  -ms-border-radius: 8px !important;
+  -o-border-radius: 8px !important;
+  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+}
+
+.form.signup-verify .form-group {
+  margin-right: 16px;
+}
+
+.form.signup-verify .form-group:last-child {
+  margin-right: 0;
+}
+
+.form.signup-verify .form-control:hover,
+.form.signup-verify .form-control:focus {
+  opacity: 1;
+}
+
+.form.signup-verify .btn {
+  background-color: #19be2f;
+  color: #ffffff;
+  font-size: calc(13px + (18 - 13) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 500;
+  height: -webkit-fill-available;
+  height: -moz-fill-available;
+  padding: 12px 10px;
+  border-radius: 8px !important;
+  -webkit-border-radius: 8px !important;
+  -moz-border-radius: 8px !important;
+  -ms-border-radius: 8px !important;
+  -o-border-radius: 8px !important;
+}
+
+.form.signup-verify .btn:hover,
+.form.signup-verify .btn:focus {
+  background-color: #0e9921;
+}
+
+.form.signup-verify .link {
+  color: #adadad;
+  font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+  line-height: 1.05;
+  font-weight: 500;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+}
+/* Differ Signup Verify End */
+
 /* Modal Start */
 .modal.nsm-dialog.nsm-centered {
   justify-content: center;
