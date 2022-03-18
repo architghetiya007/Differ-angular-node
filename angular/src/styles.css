@@ -84,6 +84,12 @@ body {
   background-color: #f1f4f6;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 .container-fluid {
   height: 100%;
   padding: 55px 40px 40px;
@@ -115,7 +121,7 @@ body {
   color: #ffffff;
   position: relative;
   min-height: 100%;
-  padding: 100px 50px;
+  padding: 100px 50px 50px;
   display: flex;
   justify-content: center;
   border-radius: 32px;
@@ -158,6 +164,11 @@ body {
   letter-spacing: -0.02em;
   text-align: center;
   margin-bottom: 20px;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .large-text {
@@ -220,6 +231,108 @@ body {
 }
 /* Differ Service Address End */
 
+/* Differ Service List Start */
+.medium-text {
+  margin-bottom: 50px;
+  font-size: calc(26px + (54 - 26) * ((100vw - 300px) / (1600 - 300)));
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-align: center;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.small-text {
+  margin-bottom: 50px;
+  font-size: calc(26px + (32 - 26) * ((100vw - 300px) / (1600 - 300)));
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-align: center;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.price-text {
+  margin: 30px 0;
+  font-size: calc(26px + (72 - 26) * ((100vw - 300px) / (1600 - 300)));
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-align: center;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.card-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-box .card {
+  background-color: #ffffff1a;
+  padding: 50px;
+  min-width: 305px;
+  max-width: 100%;
+  width: 100%;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.card-box .card .card-title {
+  margin-bottom: 20px;
+  font-size: calc(18px + (22 - 18) * ((100vw - 300px) / (1600 - 300)));
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  text-align: center;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.card-box .card .card-items-list {
+  margin-left: 1.3rem;
+}
+
+.card-box .card .card-items-list .item {
+  margin: 10px 0;
+  font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
+}
+.card-box .card .card-items-list .item:last-child {
+  margin-bottom: 0;
+}
+
+.card-box .card .card-items-list .item::before {
+  content: "\f058";
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em;
+  width: 1.3em;
+}
+
+.card-box .card .btn {
+  font-weight: 500;
+}
+/* Differ Service List End */
+
 /* Modal Start */
 .modal.nsm-dialog.nsm-centered {
   justify-content: center;
@@ -232,6 +345,12 @@ body {
 /* Modal End */
 
 /* Meida Queries Start */
+@media screen and (max-width: 1199px) {
+  .card-items-list {
+    margin: 0 auto;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .container-fluid {
     padding: 55px 0px 0px;
@@ -262,6 +381,10 @@ body {
 }
 
 @media screen and (max-width: 575px) {
+  .master-box {
+    padding: inherit;
+  }
+
   .navbar .navbar-brand {
     letter-spacing: 10px;
     padding-left: 10px;
@@ -269,6 +392,7 @@ body {
 
   .form .input-group .form-control {
     margin-bottom: 5px;
+    padding: 30px 20px 30px 20px;
   }
 
   .form .input-group .btn {
@@ -276,6 +400,10 @@ body {
     right: auto;
     width: 100%;
     padding: 10px;
+  }
+
+  .card {
+    min-width: max-content;
   }
 }
 /* Meida Queries End */
