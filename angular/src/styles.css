@@ -336,6 +336,7 @@ ul {
 .form.signup .form-control {
   color: #333;
   padding: 30px 20px;
+  margin-bottom: 8px;
   font-size: calc(13px + (18 - 13) * ((100vw - 300px) / (1600 - 300)));
   font-weight: 500;
   opacity: 0.85;
