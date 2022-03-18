@@ -14,7 +14,6 @@
       formControlName="email"
       placeholder="Enter Your Email Address"
     />
-    <button class="btn w-100 mb-2" type="submit">Next</button>
     <div class="error-box" *ngIf="submitted && signupFormHas.email?.errors">
       <div
         class="alert alert-danger alert-dismissible fade show"
@@ -77,6 +76,7 @@
         ></button>
       </div>
     </div>
+    <button class="btn w-100 mb-2" type="submit">Next</button>
   </form>
 </div>
 
