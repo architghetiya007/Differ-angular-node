@@ -1,4 +1,348 @@
-<div class="row mt-5 title">
+<div class="d-flex justify-content-center align-items-center flex-column h-100">
+  <p class="medium-text">Customer Information</p>
+  <form
+    [formGroup]="InformationForm"
+    (ngSubmit)="handleSubmit()"
+    class="form customer-info"
+  >
+    <input
+      type="text"
+      class="form-control"
+      name="firstName"
+      formControlName="firstName"
+      placeholder="First Name"
+    />
+    <div
+      class="error-box"
+      *ngIf="submitted && informationFormHas.firstName?.errors"
+    >
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.firstName.errors?.required"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">First Name is Required</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.firstName.errors?.minlength"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">First Name between 3 to 30 characters</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.firstName.errors?.maxlength"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">First Name between 3 to 30 characters</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+    </div>
+
+    <input
+      type="text"
+      class="form-control"
+      name="lastName"
+      formControlName="lastName"
+      placeholder="Last Name"
+    />
+    <div
+      class="error-box"
+      *ngIf="submitted && informationFormHas.lastName?.errors"
+    >
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.lastName.errors?.required"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Last Name is Required</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.lastName.errors?.minlength"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Last Name between 5 to 30 characters</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.lastName.errors?.maxlength"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Last Name between 5 to 30 characters</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+    </div>
+
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      formControlName="email"
+      placeholder="Email Address"
+    />
+    <div
+      class="error-box"
+      *ngIf="submitted && informationFormHas.email?.errors"
+    >
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.email.errors?.required"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Email Address is Required</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.email.errors?.minlength"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Email Address between 5 to 70 characters</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.email.errors?.maxlength"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Email Address between 5 to 70 characters</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.email.errors?.pattern"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Email Address is not valid</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+    </div>
+
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      formControlName="password"
+      placeholder="Password"
+    />
+    <div
+      class="error-box"
+      *ngIf="submitted && informationFormHas.password?.errors"
+    >
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.password.errors?.required"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Password is Required</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.password.errors?.minlength"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Password between 5 to 15 characters</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.password.errors?.maxlength"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Password between 5 to 15 characters</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+    </div>
+
+    <input
+      type="date"
+      class="form-control"
+      name="birthday"
+      formControlName="birthday"
+      placeholder="Birthday"
+    />
+    <div
+      class="error-box"
+      *ngIf="submitted && informationFormHas.birthday?.errors"
+    >
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.birthday.errors?.required"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Birthday is Required</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+    </div>
+
+    <textarea
+      class="form-control"
+      name="serviceAddress"
+      formControlName="serviceAddress"
+      placeholder="Service Address"
+      rows="3"
+    ></textarea>
+    <div
+      class="error-box"
+      *ngIf="submitted && informationFormHas.serviceAddress?.errors"
+    >
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.serviceAddress.errors?.required"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Service Address is Required</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.email.errors?.minlength"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Email Address between 5 to 70 characters</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="informationFormHas.email.errors?.maxlength"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Email Address between 5 to 70 characters</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; InformationForm.reset()"
+        ></button>
+      </div>
+    </div>
+
+    <button class="btn w-100 mb-2" type="submit">Next</button>
+  </form>
+</div>
+
+<!-- <div class="row mt-5 title">
   <div class="col-md-6 mx-auto">
     <div class="card rounded-20">
       <div class="card-header">
@@ -206,4 +550,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
