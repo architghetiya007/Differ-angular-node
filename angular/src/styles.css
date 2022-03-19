@@ -153,6 +153,81 @@ ul {
   letter-spacing: 25px;
   padding-left: 30px;
 }
+
+.navbar .logout-btn {
+  display: none;
+  font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 500;
+  color: #1d1d1f;
+}
+
+.navbar .logout-btn:hover {
+  color: #333333;
+}
+
+.logout {
+  background-color: #ffffff;
+  position: absolute;
+  top: -32.5px;
+  right: -25px;
+  width: 70px;
+  height: 61px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 25px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  -moz-transition-delay: 0.5s;
+}
+
+.logout:hover {
+  width: 150px;
+  transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+}
+
+.logout .logout-btn {
+  font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 500;
+  color: #1d1d1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logout .logout-btn::before {
+  content: "Logout";
+  font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 500;
+  opacity: 0;
+  position: absolute;
+  right: 55px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+}
+
+.logout:hover .logout-btn::before {
+  opacity: 1;
+}
 /* Master Page End */
 
 /* Differ Service Address Start */
@@ -611,11 +686,21 @@ ul {
 
   .navbar {
     width: 95%;
+    justify-content: space-between;
   }
 
   .navbar .navbar-brand {
     letter-spacing: 15px;
     padding-left: 15px;
+  }
+
+  .navbar .logout-btn {
+    display: block;
+    margin-right: 10px;
+  }
+
+  .logout {
+    display: none;
   }
 
   .table {
