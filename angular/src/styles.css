@@ -499,6 +499,65 @@ ul {
 }
 /* Differ Customer Info End */
 
+/* Differ Profile Start */
+.nav-pills .nav-link {
+  color: #ffffff;
+  background-color: transparent;
+  font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 600;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: #6969691a;
+}
+
+.nav-pills .nav-link.active {
+  color: #ffffff;
+  background-color: #ffffff1a;
+}
+
+.nav-pills .nav-link.active:hover {
+  background-color: #ffffff2e;
+}
+
+.table-box {
+  width: 100%;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.table {
+  background-color: #ffffff1a;
+  color: #ffffff;
+  width: 800px;
+  max-height: 500px;
+  margin-right: 16px;
+  position: relative;
+  border-collapse: collapse;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+
+.table td,
+.table th {
+  padding: 2rem;
+}
+
+.table thead tr th {
+  position: sticky;
+  top: 0;
+  background-color: #1d1d1f;
+}
+/* Differ Profile End */
+
 /* Modal Start */
 .modal.nsm-dialog.nsm-centered {
   justify-content: center;
@@ -538,13 +597,18 @@ ul {
     letter-spacing: 15px;
     padding-left: 15px;
   }
+
+  .table {
+    width: 700px;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .form,
   .form.signup,
   .form.signup-verify,
-  .form.customer-info {
+  .form.customer-info,
+  .tab-content {
     width: 100%;
   }
 }
@@ -581,6 +645,11 @@ ul {
 
   .form.signup-verify .form-control {
     padding: 20px 10px;
+  }
+
+  .nav .nav-item,
+  .nav .nav-item .nav-link {
+    width: 100%;
   }
 }
 /* Meida Queries End */
