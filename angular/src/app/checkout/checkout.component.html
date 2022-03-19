@@ -1,11 +1,34 @@
-<div id="container" class="checkout container">
+<div class="d-flex justify-content-center align-items-center flex-column h-100">
+  <p class="medium-text">Payment</p>
+  <button type="button" class="btn payment-btn" (click)="openCheckout()">
+    Proceed to Pay
+  </button>
+  <div class="error-box mt-5" *ngIf="errMsg">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <span class="error-text">There were errors while submitting</span>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+        (click)="errMsg = false"
+      ></button>
+    </div>
+  </div>
+</div>
+
+<!-- <div id="container" class="checkout container">
   <div id="customer-info" class="row">
     <div class="col-sm-7" id="checkout_info">
       <div id="subscribe-form">
-        <div class="page-header">
-          <!-- <h3>Tell us about yourself</h3> -->
-        </div>
-        <!-- <div class="row">
+        <div class="page-header"> -->
+
+<!-- <h3>Tell us about yourself</h3> -->
+
+<!-- </div> -->
+
+<!-- <div class="row">
                     <div class="col-sm-6"> 
                         <div class="form-group">
                             <label for="first_name">First Name</label>
@@ -42,7 +65,8 @@
                         </div>
                     </div>
                 </div>                         -->
-        <hr />
+
+<!-- <hr />
         <p class="text-danger" *ngIf="errMsg">
           There were errors while submitting
         </p>
@@ -54,9 +78,11 @@
               data-cb-item-0="cbdemo_advanced-USD-yearly"
               data-cb-item-0-quantity="1"
               >subscribe</a
-            >
-            <!-- <input type="submit" (click)="openCheckout()" class="submit-btn btn btn-success btn-lg" value="Proceed to Payment"> -->
-          </div>
+            > -->
+
+<!-- <input type="submit" (click)="openCheckout()" class="submit-btn btn btn-success btn-lg" value="Proceed to Payment"> -->
+
+<!-- </div>
           <div class="form-group">
             <span ref="loader" class="subscribe-process process" *ngIf="loading"
               >Processing&hellip;</span
@@ -64,8 +90,9 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- <div class="col-sm-4 cb-order-list col-sm-offset-1">
+    </div> -->
+
+<!-- <div class="col-sm-4 cb-order-list col-sm-offset-1">
             <div class="page-header">
                 <h3>Subscription Details</h3>
             </div>
@@ -77,6 +104,7 @@
                 </div>
             </div>
         </div> -->
-  </div>
+
+<!-- </div>
   <div id="checkout-info" class="row"></div>
-</div>
+</div> -->

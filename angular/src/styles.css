@@ -169,7 +169,7 @@ ul {
 .large-text {
   color: #ffffff;
   margin-bottom: 80px;
-  font-size: calc(26px + (80 - 26) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(28px + (80 - 28) * ((100vw - 300px) / (1600 - 300)));
   line-height: 1.05;
   font-weight: 700;
   letter-spacing: -0.05em;
@@ -557,6 +557,26 @@ ul {
   background-color: #1d1d1f;
 }
 /* Differ Profile End */
+
+/* Differ Checkout Start */
+.btn.payment-btn {
+  background-color: #19be2f;
+  color: #ffffff;
+  font-size: calc(13px + (18 - 13) * ((100vw - 300px) / (1600 - 300)));
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 8px !important;
+  -webkit-border-radius: 8px !important;
+  -moz-border-radius: 8px !important;
+  -ms-border-radius: 8px !important;
+  -o-border-radius: 8px !important;
+}
+
+.btn.payment-btn:hover,
+.btn.payment-btn:focus {
+  background-color: #0e9921;
+}
+/* Differ Checkout End */
 
 /* Modal Start */
 .modal.nsm-dialog.nsm-centered {
