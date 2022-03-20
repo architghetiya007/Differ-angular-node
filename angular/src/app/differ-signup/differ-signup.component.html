@@ -1,4 +1,86 @@
-<div class="row mt-5 title">
+<div class="d-flex justify-content-center align-items-center flex-column h-100">
+  <p class="medium-text">
+    Enter your email address to<br />create your account
+  </p>
+  <form
+    [formGroup]="signupForm"
+    (ngSubmit)="handleSubmit()"
+    class="form signup"
+  >
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      formControlName="email"
+      placeholder="Enter Your Email Address"
+    />
+    <div class="error-box" *ngIf="submitted && signupFormHas.email?.errors">
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="signupFormHas.email.errors?.required"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Email Address is Required</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; signupForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="signupFormHas.email.errors?.minlength"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Email Address between 5 to 70 characters</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; signupForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="signupFormHas.email.errors?.maxlength"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Email Address between 5 to 70 characters</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; signupForm.reset()"
+        ></button>
+      </div>
+      <div
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        *ngIf="signupFormHas.email.errors?.pattern"
+      >
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span class="error-text">Email Address is not valid</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+          (click)="submitted = false; signupForm.reset()"
+        ></button>
+      </div>
+    </div>
+    <button class="btn w-100" type="submit">Next</button>
+  </form>
+</div>
+
+<!-- <div class="row mt-5 title">
   <div class="col-md-6 mx-auto">
     <div class="card rounded-20">
       <div class="card-header">
@@ -52,4 +134,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
