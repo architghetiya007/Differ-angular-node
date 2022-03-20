@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MasterComponent implements OnInit {
 
+  loggedIn:any = false;
+
   constructor() { }
 
   ngOnInit(): void {
