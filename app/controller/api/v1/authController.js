@@ -4,31 +4,17 @@ const jwt = require('jsonwebtoken');
 const chargebee = require("chargebee");
 const nodemailer = require("nodemailer");
 const client = require('./../../../../database');
-
-	// chargebee.configure({
-	// 	site: "differ-test",
-	// 	api_key: "test_wuz31AKbSdAacuv8lgv16toQ43cwqt0N2"
-	// });
-
-	// chargebee.configure({
-	// 	site: "archit-test",
-	// 	api_key: "test_wuz31AKbSdAacuv8lgv16toQ43cwqt0N2"
-	// });
-
- chargebee.configure({
-		site: "archittest-test",
-		api_key: "test_ZQbcdpBTEEy8mUycxOM5CIvgPo0fcd3nsf"
-	});
+const axios = require('axios');
 
 
-// chargebee.configure({
-// 	site: "architnew2-test",
-// 	api_key: "test_rY26HFiCmFbTpzyjDODpwxpIrvqZUpcX"
-// });
+chargebee.configure({
+		site: "archittest2-test",
+		api_key: "test_Y2LUzyYO2EIlGKRnUMOGgEqRK3hcxiNa"
+});
 
 exports.chargeBeeItemList = async (req, res) => {
 	try {
-		chargebee.item.list({
+		chargebee.item_price.list({
 			limit: 100
 		}).request(function (error, result) {
 			if (error) {
@@ -86,7 +72,6 @@ exports.chargeBeeListOfCustomer = async (req, res) => {
 						return res.status(200).json({ status: true, code: 201, message: 'user already created', data: result.list });
 					} else {
 						const sendmail =  common.send_mail(req.body.email, "OTP FOR CHARGEBEE VERIFY", random);
-						console.log(result.list[0],">>>>>>>>>>>>>>>>>>>");
 						chargebee.customer.update(result.list[0].customer.id, {
 							cf_validation_code: random
 						}).request(function (error, result) {
@@ -104,7 +89,6 @@ exports.chargeBeeListOfCustomer = async (req, res) => {
 				else {
 					const sendmail =  common.send_mail(req.body.email, "OTP FOR CHARGEBEE VERIFY", random);
 					var queryString  = "INSERT INTO address (email, address) VALUES ('"+ req.body.email+"','"+req.body.address +"')";
-					console.log(queryString,"queryString>>>>>>>>>>");
 					client.query(queryString ,(err,res) => {
 						if(err){
 							console.log(err,"Error While save into DB");
@@ -137,7 +121,6 @@ exports.chargeBeeListOfCustomer = async (req, res) => {
 
 exports.verifyMail = async (req, res) => {
 	try {
-		console.log(req.body,"body>>>>>>>>>>>>>>>>>>>>>");
 		chargebee.customer.list({
 			"email[is]":req.body.email
 		}).request(function (error, result) {
@@ -146,7 +129,6 @@ exports.verifyMail = async (req, res) => {
 				res.status(200).json({ status: false, code: 400, message: 'Invalid OTP'});
 			}
 			else {
-				console.log(result.list[0].customer,"customer>>>>>>>");
 				if (result.list[0].customer.cf_validation_code == req.body.FULL_OTP) {
 					chargebee.customer.update(result.list[0].customer.id,{
 						cf_validation_code : 1,
@@ -170,10 +152,9 @@ exports.verifyMail = async (req, res) => {
 	}
 }
 
-exports.chargeBeeSaveUserDetail = async (req, res) => {
+exports.login = async (req, res) => {
 	try {
 		let encryptedPass = md5(req.body.password);
-		console.log(req.body, "body>>>>>>>>>>>>>>>>>>>>>");
 		chargebee.customer.list({
 			"email[is]": req.body.email
 		}).request(function (error, result) {
@@ -182,25 +163,34 @@ exports.chargeBeeSaveUserDetail = async (req, res) => {
 				res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
 			}
 			else {
-				console.log(result.list[0].customer.id, "customer>>>>>>>");
-				chargebee.customer.update(result.list[0].customer.id, {
+				let updateObj = { 
 					first_name: req.body.firstName,
 					last_name: req.body.lastName,
-					cf_password: encryptedPass,
 					cf_birthday: req.body.birthday,
 					billing_address: {
 						line1: req.body.serviceAddress
 					}
-				}).request(function (error, response) {
-					if (error) {
-						//handle error
-						console.log(error);
-						res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
+				};
+				if (result.list.length > 0) {
+
+					if (result.list[0].customer.cf_password == encryptedPass || result.list[0].customer.cf_password == undefined ) {
+					updateObj.cf_password = encryptedPass;
+						chargebee.customer.update(result.list[0].customer.id, updateObj).request(function (error, response) {
+							if (error) {
+								//handle error
+								console.log(error);
+								res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
+							} else {
+								let token = jwt.sign({id:result.list[0].customer.id,email:result.list[0].customer.email},process.env.JWT_SECRET,{ expiresIn: 60 * 60 *24 });
+								res.status(200).json({ status: true, code: 200, message: 'Information updated successfully',data:{ token:token} });
+							}
+						});
 					} else {
-						console.log(response);
-						res.status(200).json({ status: true, code: 200, message: 'Information updated successfully' });
+						res.status(200).json({ status: false, code: 401, message: 'Email and password does not match' });
 					}
-				});
+				} else {
+					res.status(200).json({ status: false, code: 401, message: 'Email Is not Register' });
+				}
 			}
 		});
 	}
@@ -214,21 +204,21 @@ exports.chargeBeeCheckout = async (req, res) => {
 	try {
 		chargebee.hosted_page.checkout_new_for_items({
 			subscription_items : [
-			  {
-				item_price_id : "",	
-				unit_price : 100,
-			  },
-			  {
-				item_price_id : "cbdemo_additional_analytics",
-				quantity : 1  
-			  }]
+				{
+					item_price_id : req.body.price_id,
+					quantity : 1
+				}],
+				customer: { id: req.user.id },
+				redirect_url:'http://localhost:4200/differ-my-profile',
+				cancel_url:"http://localhost:4200/differ-checkout"
 		  }).request(function(error,result) {
 			if(error){
 			  //handle error
 			  console.log(error);
-			}else{
-			  console.log(result);
-			  var hosted_page = result.hosted_page;
+			  res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
+			}
+			else{
+			  res.status(200).json({ status: true, code: 200, message: 'Successfully checkout', data:result });
 			}
 		  });
 	}
@@ -237,5 +227,199 @@ exports.chargeBeeCheckout = async (req, res) => {
 		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
 	}
 } 
+
+exports.chargeBeeGetNetwork = async (req, res) => {
+	try {
+		chargebee.customer.list({
+			"email[is]": req.body.email
+		}).request(async function (error, result) {
+			if (error) {
+				console.log(error);
+				res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
+			}
+			else {
+				const networkData = await axios.get(`http://management-interface.differ.ca/api/v1/customer/${result.list[0].customer.id}/network`, {
+					headers: {
+						'Authorization': '8d13c8d9e3c69876865973d69c3a01a2c03e2cbe6cb1f154350dee0132b74729'
+					}
+				});
+				res.status(200).json({ status: true, code: 200, message: 'Network data',data:networkData.data });
+			}
+		})
+	}
+	catch (e) {
+		console.log(e, "????????");
+		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
+	}
+}
+
+exports.chargeBeeUpdateNetwork = async (req, res) => {
+	try {
+		chargebee.customer.list({
+			"email[is]": req.user.email
+		}).request(async function (error, result) {
+			if (error) {
+				console.log(error);
+				res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
+			}
+			else {
+				if(result.list.length > 0) {
+					const networkData = await axios({
+						method: 'put',
+						url: `http://management-interface.differ.ca/api/v1/customer/${result.list[0].customer.id}/network`,
+						headers: {
+							'Authorization': '8d13c8d9e3c69876865973d69c3a01a2c03e2cbe6cb1f154350dee0132b74729'
+						},
+						data: {
+							ssid: req.body.ssid,
+							wpa2_key:  req.body.wpa2_key
+						}
+					});
+					res.status(200).json({ status: true, code: 200, message: 'Network data',data:networkData.data });
+				}
+			}
+		})
+	}
+	catch (e) {
+		console.log(e, "????????");
+		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
+	}
+}
+
+exports.chargeBeeGetUserDetail = async (req, res) => {
+	try {
+		chargebee.customer.list({ 
+			"email[is]": req.user.email
+		}).request(async function (error, result) {
+			if (error) {
+				console.log(error);
+				res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
+			}
+			else {
+				if (result.list.length > 0) {
+					res.status(200).json({ status: true, code: 200, message: 'User Information', data:result.list[0].customer });
+				} else {
+					res.status(200).json({ status: false, code: 204, message: 'User Information' });
+				}				
+			}
+		})
+	}
+	catch (e) {
+		console.log(e, "????????");
+		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
+	}
+}
+
+exports.chargeBeeSubscriptionDetail = async (req, res) => {
+	try {
+		chargebee.customer.list({ 
+			"email[is]": req.user.email
+		}).request(async function (error, result) {
+			if (error) {
+				console.log(error);
+				res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
+			}
+			else {
+				if (result.list.length > 0) {
+					res.status(200).json({ status: true, code: 200, message: 'User Information', data:result.list[0].customer });
+				} else {
+					res.status(200).json({ status: false, code: 204, message: 'User Information' });
+				}				
+			}
+		})
+	}
+	catch (e) {
+		console.log(e, "????????");
+		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
+	}
+}
+
+exports.chargeBeeSubscriptionList = async (req, res) => {
+	try {
+		chargebee.subscription.list({ 
+			"customer_id[is]": req.user.id
+		}).request(async function (error, result) {
+			if (error) {
+				console.log(error);
+				res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
+			}
+			else {
+				if (result.list.length > 0) {
+					res.status(200).json({ status: true, code: 200, message: 'subscription list', data: result.list });
+				} else {
+					res.status(200).json({ status: false, code: 204, message: 'subscription list' });
+				}				
+			}
+		})
+	}
+	catch (e) {
+		console.log(e, "????????");
+		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
+	}
+}
+
+exports.chargeBeeUpdateSubscription = async (req, res) => {
+	try {
+		chargebee.hosted_page.checkout_existing_for_items({
+			subscription : {
+			  id : req.body.subscriptionId
+			  },
+			subscription_items : [
+			  {
+				item_price_id : req.body.itemPriceId,
+				quantity : 1,
+			  }],
+			  redirect_url:'http://localhost:4200/differ-my-profile',
+			  cancel_url:"http://localhost:4200/differ-my-profile"
+			}).request(async function (error, result) {
+			if (error) {
+				console.log(error);
+				res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
+			}
+			else {
+				if (result.hosted_page) {
+					res.status(200).json({ status: true, code: 200, message: 'update subscription',  data: result });
+				} else {
+					res.status(200).json({ status: false, code: 204, message: 'update subscription' });
+				}				
+			}
+		})
+	}
+	catch (e) {
+		console.log(e, "????????");
+		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
+	}
+}
+
+exports.chargeBeeChangeBillingDetail = async (req, res) => {
+	try {
+		chargebee.hosted_page.manage_payment_sources({
+			card : {
+			  gateway_account_id : req.body.gatewayAccountId
+			  },
+			customer : {
+			  id : req.body.customerId
+			  },
+			//   redirect_url:'http://localhost:4200/differ-my-profile'
+		  }).request(async function (error, result) {
+			if (error) {
+				console.log(error);
+				res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
+			}
+			else {
+				if (result.hosted_page) {
+					res.status(200).json({ status: true, code: 200, message: 'update subscription',  data: result });
+				} else {
+					res.status(200).json({ status: false, code: 204, message: 'update subscription' });
+				}				
+			}
+		})
+	}
+	catch (e) {
+		console.log(e, "????????");
+		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
+	}
+}
+
 
 

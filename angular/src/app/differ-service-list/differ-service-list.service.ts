@@ -36,4 +36,20 @@ export class DifferServiceList {
     return this.http.get("http://localhost:3000/api/v1/auth/chargebee-get-user-detail");
   }
 
+  differCheckOut(data:any) {
+    return this.http.post("http://localhost:3000/api/v1/auth/chargebee-checkout",data);
+  }
+
+  differGetSubscriptionList() {
+    return this.http.get("http://localhost:3000/api/v1/auth/chargebee-subscription-list");
+  }
+
+  differChangeSubscription(data:any) {
+    return this.http.put("http://localhost:3000/api/v1/auth/chargebee-update-subscription",data);
+  }
+
+  differChangebillingDetail(data:any) {
+    return this.http.put("http://localhost:3000/api/v1/auth/chargebee-update-billing-detail",data);
+  }
+
 }

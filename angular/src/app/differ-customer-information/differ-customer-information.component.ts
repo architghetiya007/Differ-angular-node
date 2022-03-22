@@ -14,8 +14,7 @@ import swal from 'sweetalert2';
 @Component({
   selector: 'app-differ-customer-information',
   templateUrl: './differ-customer-information.component.html',
-  styles: [
-  ]
+  styleUrls: ['./differ-customer-information.component.css']
 })
 export class DifferCustomerInformationComponent implements OnInit {
 
@@ -56,7 +55,6 @@ export class DifferCustomerInformationComponent implements OnInit {
     if (this.InformationForm.invalid) {
       return;
     }
-    console.log(this.InformationForm.value);
  
     sessionStorage.setItem('birthday',this.InformationForm.value.birthday);
     sessionStorage.setItem('firstName',this.InformationForm.value.firstName);

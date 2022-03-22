@@ -13,8 +13,7 @@ import swal from 'sweetalert2';
 @Component({
   selector: 'app-differ-service-address',
   templateUrl: './differ-service-address.component.html',
-  styles: [
-  ]
+  styleUrls: ['./differ-service-address.component.css']
 })
 export class DifferServiceAddressComponent implements OnInit {
 
@@ -58,7 +57,6 @@ export class DifferServiceAddressComponent implements OnInit {
   }
   
   cityChange(event:any) {
-    console.log(event.target.value,"event>>>>>>");
     this.serviceAddressForm.patchValue({
       city : event.target.value
     })

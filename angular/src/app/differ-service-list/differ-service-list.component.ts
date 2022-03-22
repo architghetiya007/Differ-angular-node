@@ -14,8 +14,7 @@ import swal from 'sweetalert2';
 @Component({
   selector: 'app-differ-service-list',
   templateUrl: './differ-service-list.component.html',
-  styles: [
-  ]
+  styleUrls: ['./differ-service-list.component.css']
 })
 export class DifferServiceListComponent implements OnInit {
   public address : any = "";
@@ -29,18 +28,15 @@ export class DifferServiceListComponent implements OnInit {
   }
 
   handleServiceClick(data:any) {
-    // console.log("data>>>>>>>>>>>>>>>>>>>",data);
-    sessionStorage.setItem("selectedId",data.item.id);
+    sessionStorage.setItem("selectedId",data.item_price.id);
     this.router.navigate(['/differ-signup']);
   }
 
   serviceItemList : any = [];
   getItemList() {
     this.differServiceList.differItemList().subscribe((result:any) => {
-      console.log(result,"result>>>>>>>>>>>>>>>>>");
       if(result['code'] == 200 ) {
         this.serviceItemList = result['data']['list'];
-        console.log(this.serviceItemList)
       }
     }, 
     (err:any) => {

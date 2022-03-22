@@ -14,8 +14,7 @@ import swal from 'sweetalert2';
 @Component({
   selector: 'app-differ-signup',
   templateUrl: './differ-signup.component.html',
-  styles: [
-  ]
+  styleUrls: ['./differ-signup.component.css']
 })
 export class DifferSignupComponent implements OnInit {
 
@@ -47,7 +46,6 @@ export class DifferSignupComponent implements OnInit {
       email: this.signupForm.value.email,
     }
     this.differServiceList.differCreateCustomer(reqData).subscribe(async (result:any) => {
-      console.log(result,"result>>>>>>>>>>>>>>>>>");
       if(result['code'] == 201 ) {
         this.router.navigate(['/differ-customer-information']);
       }

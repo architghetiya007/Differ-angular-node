@@ -44,10 +44,12 @@ const routes: Routes = [
       {
         path: 'differ-my-profile',
         component: DifferMyProfileComponent,
+        canActivate: [RouteGuard]
       },
       {
         path: 'differ-checkout',
         component: CheckoutComponent,
+        canActivate: [RouteGuard]
       },
     ]
   }

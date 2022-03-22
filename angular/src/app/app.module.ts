@@ -24,6 +24,7 @@ import { DifferServiceListComponent } from './differ-service-list/differ-service
 import { DifferSignupComponent } from './differ-signup/differ-signup.component';
 import { DifferSignupVerifyComponent } from './differ-signup-verify/differ-signup-verify.component';
 import { DifferCustomerInformationComponent } from './differ-customer-information/differ-customer-information.component';
+import { DifferNavBarComponent } from './differ-nav-bar/differ-nav-bar.component';
 import { DifferMyProfileComponent } from './differ-my-profile/differ-my-profile.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MasterComponent } from './layouts/master/master.component';
@@ -36,9 +37,10 @@ import { MasterComponent } from './layouts/master/master.component';
     DifferSignupComponent,
     DifferSignupVerifyComponent,
     DifferCustomerInformationComponent,
+    DifferNavBarComponent,
     DifferMyProfileComponent,
     CheckoutComponent,
-    MasterComponent,
+    MasterComponent
   ],
   imports: [
     BrowserModule,
