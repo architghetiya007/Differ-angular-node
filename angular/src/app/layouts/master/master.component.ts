@@ -16,9 +16,11 @@ export class MasterComponent implements OnInit {
     this.loggedIn = sessionStorage.getItem('token');
   }
 
+  login() {}
+
   logout() {
     sessionStorage.clear();
     this.router.navigate(['differ-service-address']);
     this.loggedIn = '';
-  } 
+  }
 }
