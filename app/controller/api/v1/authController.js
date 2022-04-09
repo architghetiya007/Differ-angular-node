@@ -5,17 +5,19 @@ const chargebee = require("chargebee");
 const nodemailer = require("nodemailer");
 const client = require('./../../../../database');
 const axios = require('axios');
+const dotenv = require("dotenv").config();
 
 
 chargebee.configure({
-		site: "archittest2-test",
-		api_key: "test_Y2LUzyYO2EIlGKRnUMOGgEqRK3hcxiNa"
+		site: process.env.CHARGEBEE_SITE,
+		api_key:  process.env.CHARGEBEE_API_KEY
 });
 
 exports.chargeBeeItemList = async (req, res) => {
 	try {
 		chargebee.item_price.list({
-			limit: 100
+			"limit": 100,
+			"status[is]":"active"
 		}).request(function (error, result) {
 			if (error) {
 				//handle error
@@ -100,6 +102,7 @@ exports.chargeBeeListOfCustomer = async (req, res) => {
 					chargebee.customer.create({
 						email: req.body.email,
 						cf_validation_code:random,
+						cf_address:req.body.address,
 						id:req.body.email
 					}).request(function (error, result) {
 						if (error) {
@@ -143,6 +146,30 @@ exports.verifyMail = async (req, res) => {
 				}
 				else {
 					res.status(200).json({ status: false, code: 400, message: 'Invalid OTP' });
+				}
+			}
+		});
+	}
+	catch (e) {
+		console.log(e, "????????");
+		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
+	}
+}
+
+exports.chargeBeeSignup = async (req, res) => {
+	try {
+		chargebee.customer.list({
+			"email[is]": req.body.email
+		}).request(function (error, result) {
+			if (error) {
+				console.log(error);
+				res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
+			}
+			else {
+				if (result.list.length > 0) {
+					res.status(200).json({ status: true, code: 200, message: 'user already exists',data:result.list });
+				} else {
+					res.status(200).json({ status: true, code: 204, message: 'Email Is not Register' });
 				}
 			}
 		});
@@ -415,6 +442,31 @@ exports.chargeBeeChangeBillingDetail = async (req, res) => {
 				}				
 			}
 		})
+	}
+	catch (e) {
+		console.log(e, "????????");
+		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
+	}
+}
+
+exports.chargeBeeSubscriptionList = async (req, res) => {
+	try {
+		chargebee.subscription.list({
+			"customer_id[is]":req.user.id
+		}).request(function (error, result) {
+			if (error) {
+				console.log(error);
+				res.status(200).json({ status: false, code: 400, message: 'Error from chargebee'});
+			}
+			else {
+				if ( result.list.length > 0 ) {
+					res.status(200).json({ status: true, code: 200, message: 'Subscription List', data: result.list });
+				}
+				else {
+					res.status(200).json({ status: false, code: 204, message: 'Subscription List' });
+				}
+			}
+		});
 	}
 	catch (e) {
 		console.log(e, "????????");
