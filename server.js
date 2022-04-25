@@ -6,6 +6,7 @@ const port = process.env.PORT || 8080;
 const bodyParser = require("body-parser");
 const path = require("path");
 const client = require('./database');
+const engines = require('consolidate');
 
 const app = express();
 app.use(cors());
@@ -15,10 +16,19 @@ client.connect();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: "true" }));
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-app.use(express.static(path.join(__dirname,'/dist/angular')));
-app.use('/*',function(req,res){
-    res.sendFile(path.join(__dirname+'/dist/angular/index.html'))
-})
+
+app.use(express.static(__dirname + "/public/angular/"));
+app.engine('html', engines.nunjucks);
+app.set('view engine', 'html');
+app.set('view', __dirname + '/public/angular/');
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + "/" + "index.html");
+});
+
+app.get('/webapp/*', function(req, res) {
+  res.sendFile(__dirname + "/public/angular/" + "index.html");
+});
+
 // routes ======================================================================
 var apiRouter = require('./app/routes/api/v1');
 app.use('/api/v1', apiRouter);
