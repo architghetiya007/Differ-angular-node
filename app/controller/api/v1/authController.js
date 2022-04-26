@@ -327,8 +327,8 @@ exports.chargeBeeCheckout = async (req, res) => {
 					quantity : 1
 				}],
 				customer: { id: req.user.id },
-				redirect_url:'http://localhost:4200/differ-my-profile',
-				cancel_url:"http://localhost:4200/differ-checkout"
+				redirect_url:process.env.HOSTED_PAGE_REDIRECT_URL,
+				cancel_url:process.env.HOSTED_PAGE_CANCEL_URL
 		  }).request(function(error,result) {
 			if(error){
 			  //handle error
@@ -487,8 +487,8 @@ exports.chargeBeeUpdateSubscription = async (req, res) => {
 				item_price_id : req.body.itemPriceId,
 				quantity : 1,
 			  }],
-			  redirect_url:'http://localhost:4200/differ-my-profile',
-			  cancel_url:"http://localhost:4200/differ-my-profile"
+			redirect_url: process.env.HOSTED_PAGE_REDIRECT_URL,
+			cancel_url: process.env.HOSTED_PAGE_REDIRECT_URL
 			}).request(async function (error, result) {
 			if (error) {
 				console.log(error);
@@ -514,11 +514,10 @@ exports.chargeBeeChangeBillingDetail = async (req, res) => {
 		chargebee.hosted_page.manage_payment_sources({
 			card : {
 			  gateway_account_id : req.body.gatewayAccountId
-			  },
+			},
 			customer : {
 			  id : req.body.customerId
-			  },
-			//   redirect_url:'http://localhost:4200/differ-my-profile'
+			},
 		  }).request(async function (error, result) {
 			if (error) {
 				console.log(error);

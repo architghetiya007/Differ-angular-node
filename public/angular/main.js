@@ -166,7 +166,7 @@ DifferSignupComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵde
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\FSP TRAINING\DifferRepo\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! F:\FSP TRAINING\Differ-angular-node\angular\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -1086,21 +1086,10 @@ DifferMyProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵ�
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
-    baseUrl: 'http://localhost:3000'
+    baseUrl: '/apisd'
 };
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),
@@ -1879,8 +1868,10 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_31__["ɵɵdefineInjecto
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DifferServiceList", function() { return DifferServiceList; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../environments/environment */ "AytR");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+
 
 
 class DifferServiceList {
@@ -1888,60 +1879,59 @@ class DifferServiceList {
         this.http = http;
     }
     differItemList() {
-        return this.http.get("http://localhost:3000/api/v1/auth/chargebee-item-list");
+        return this.http.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-item-list`);
     }
     differCreateCustomer(data) {
-        return this.http.post("http://localhost:3000/api/v1/auth/chargebee-user-list", data);
+        return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-user-list`, data);
     }
     differSignUpVerifyOTP(data) {
-        return this.http.put("http://localhost:3000/api/v1/auth/verify-mail", data);
+        return this.http.put(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/verify-mail`, data);
     }
     differCustomerInformation(data) {
-        return this.http.put("http://localhost:3000/api/v1/auth/chargebee-save-user-detail", data);
+        return this.http.put(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-save-user-detail`, data);
     }
     differUpdateProfile(data) {
-        return this.http.put("http://localhost:3000/api/v1/auth/update-profile", data);
+        return this.http.put(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/update-profile`, data);
     }
     changePassword(data) {
-        console.log(data, "service>>>>>>");
-        return this.http.put("http://localhost:3000/api/v1/auth/change-password", data);
+        return this.http.put(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/change-password`, data);
     }
     login(data) {
-        return this.http.post("http://localhost:3000/api/v1/auth/differ-login", data);
+        return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/differ-login`, data);
     }
     differGetNetworkInfo(data) {
-        return this.http.put("http://localhost:3000/api/v1/auth/chargebee-network", data);
+        return this.http.put(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-network`, data);
     }
     differUpdateNetworkInfo(data) {
-        return this.http.put("http://localhost:3000/api/v1/auth/chargebee-update-network", data);
+        return this.http.put(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-update-network`, data);
     }
     differGetUserInfo() {
-        return this.http.get("http://localhost:3000/api/v1/auth/chargebee-get-user-detail");
+        return this.http.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-get-user-detai`);
     }
     differCheckOut(data) {
-        return this.http.post("http://localhost:3000/api/v1/auth/chargebee-checkout", data);
+        return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-checkout`, data);
     }
     differGetSubscriptionList() {
-        return this.http.get("http://localhost:3000/api/v1/auth/chargebee-subscription-list");
+        return this.http.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-subscription-list`);
     }
     differChangeSubscription(data) {
-        return this.http.put("http://localhost:3000/api/v1/auth/chargebee-update-subscription", data);
+        return this.http.put(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-update-subscription`, data);
     }
     differChangebillingDetail(data) {
-        return this.http.put("http://localhost:3000/api/v1/auth/chargebee-update-billing-detail", data);
+        return this.http.put(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-update-billing-detail`, data);
     }
     differSignup(data) {
-        return this.http.post("http://localhost:3000/api/v1/auth/chargebee-signup", data);
+        return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-signup`, data);
     }
     differSubscriptionList() {
-        return this.http.get("http://localhost:3000/api/v1/auth/chargebee-subscription-list");
+        return this.http.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-subscription-list`);
     }
     differCheckAddress(data) {
-        return this.http.post("http://localhost:3000/api/v1/auth/chargebee-address-compare", data);
+        return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-address-compare`, data);
     }
 }
-DifferServiceList.ɵfac = function DifferServiceList_Factory(t) { return new (t || DifferServiceList)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
-DifferServiceList.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: DifferServiceList, factory: DifferServiceList.ɵfac, providedIn: 'root' });
+DifferServiceList.ɵfac = function DifferServiceList_Factory(t) { return new (t || DifferServiceList)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"])); };
+DifferServiceList.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: DifferServiceList, factory: DifferServiceList.ɵfac, providedIn: 'root' });
 
 
 /***/ }),
