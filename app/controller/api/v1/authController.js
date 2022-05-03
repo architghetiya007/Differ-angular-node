@@ -332,7 +332,7 @@ exports.chargeBeeCheckout = async (req, res) => {
 		  }).request(function(error,result) {
 			if(error){
 			  //handle error
-			  console.log(error);
+			  console.log(error,"chargeBeeCheckout");
 			  res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
 			}
 			else{
@@ -341,18 +341,19 @@ exports.chargeBeeCheckout = async (req, res) => {
 		  });
 	}
 	catch (e) {
-		console.log(e, "error");
+		console.log(e, "chargeBeeCheckoutchargeBeeCheckout");
 		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
 	}
 } 
 
 exports.chargeBeeGetNetwork = async (req, res) => {
+	console.log("chargeBeeGetNetworkchargeBeeGetNetworkchargeBeeGetNetwork>>>>>>>>>>>>>>>>>>>>>>");
 	try {
 		chargebee.customer.list({
-			"email[is]": req.body.email
+			"email[is]": req.user.id
 		}).request(async function (error, result) {
 			if (error) {
-				console.log(error);
+				console.log(error,"get chargebee network error ");
 				res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
 			}
 			else {
@@ -366,7 +367,7 @@ exports.chargeBeeGetNetwork = async (req, res) => {
 		})
 	}
 	catch (e) {
-		console.log(e, "error");
+		console.log("chargeBeeGetNetwork", e, "chargeBeeGetNetwork");
 		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
 	}
 }

@@ -802,7 +802,7 @@ class DifferMyProfileComponent {
             SSID: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required]),
             NetworkPassword: new _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_0__["Validators"].required]),
         });
-        this.getNetworkInfo();
+        // this.getNetworkInfo();
         this.getProfileInfo();
         this.getSubscriptionInfo();
     }
@@ -1906,7 +1906,7 @@ class DifferServiceList {
         return this.http.put(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-update-network`, data);
     }
     differGetUserInfo() {
-        return this.http.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-get-user-detai`);
+        return this.http.get(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-get-user-detail`);
     }
     differCheckOut(data) {
         return this.http.post(`${_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].baseUrl}/v1/auth/chargebee-checkout`, data);
