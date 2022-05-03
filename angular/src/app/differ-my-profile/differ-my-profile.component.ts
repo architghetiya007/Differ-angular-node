@@ -37,8 +37,8 @@ export class DifferMyProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.myProfileForm = new FormGroup({
-      firstName: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30) ]),
-      lastName: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30) ]),
+      firstName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30) ]),
+      lastName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30) ]),
       serviceAddress: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(70) ]),
       // birthday: new FormControl('', [Validators.required ]),
     });
@@ -58,7 +58,7 @@ export class DifferMyProfileComponent implements OnInit {
       NetworkPassword: new FormControl('', [Validators.required ]),
     });
 
-    this.getNetworkInfo();
+    // this.getNetworkInfo();
     this.getProfileInfo();
     this.getSubscriptionInfo();
   }

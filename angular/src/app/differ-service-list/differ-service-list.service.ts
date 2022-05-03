@@ -46,7 +46,7 @@ export class DifferServiceList {
   }
 
   differGetUserInfo() {
-    return this.http.get(`${environment.baseUrl}/v1/auth/chargebee-get-user-detai`);
+    return this.http.get(`${environment.baseUrl}/v1/auth/chargebee-get-user-detail`);
   }
 
   differCheckOut(data:any) {
