@@ -29,7 +29,6 @@ app.get('/webapp/*', function(req, res) {
   res.sendFile(__dirname + "/public/angular/" + "index.html");
 });
 
-// routes ======================================================================
 var apiRouter = require('./app/routes/api/v1');
 app.use('/api/v1', apiRouter);
 

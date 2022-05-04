@@ -58,7 +58,7 @@ export class DifferMyProfileComponent implements OnInit {
       NetworkPassword: new FormControl('', [Validators.required ]),
     });
 
-    // this.getNetworkInfo();
+    this.getNetworkInfo();
     this.getProfileInfo();
     this.getSubscriptionInfo();
   }

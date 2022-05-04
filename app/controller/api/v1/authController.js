@@ -347,29 +347,15 @@ exports.chargeBeeCheckout = async (req, res) => {
 } 
 
 exports.chargeBeeGetNetwork = async (req, res) => {
-	console.log("chargeBeeGetNetworkchargeBeeGetNetworkchargeBeeGetNetwork>>>>>>>>>>>>>>>>>>>>>>");
-	try {
-		chargebee.customer.list({
-			"email[is]": req.user.id
-		}).request(async function (error, result) {
-			if (error) {
-				console.log(error,"get chargebee network error ");
-				res.status(200).json({ status: false, code: 400, message: 'Error From Chargbee' });
+		const networkData = await axios.get(`http://management-interface.differ.ca/api/v1/customer/${req.user.id}/network`, {
+			headers: {
+				'Authorization': '8d13c8d9e3c69876865973d69c3a01a2c03e2cbe6cb1f154350dee0132b74729'
 			}
-			else {
-				const networkData = await axios.get(`http://management-interface.differ.ca/api/v1/customer/${result.list[0].customer.id}/network`, {
-					headers: {
-						'Authorization': '8d13c8d9e3c69876865973d69c3a01a2c03e2cbe6cb1f154350dee0132b74729'
-					}
-				});
-				res.status(200).json({ status: true, code: 200, message: 'Network data',data:networkData.data });
-			}
+		}).then(( response ) => {
+			res.status(200).json({ status: true, code: 200, message: 'Network data',data:networkData.data });
+		}).catch((err) => {
+			console.log(err,"chargebee get network error >>>>>>>>>>>>>>>");
 		})
-	}
-	catch (e) {
-		console.log("chargeBeeGetNetwork", e, "chargeBeeGetNetwork");
-		res.status(200).json({ status: false, code: 400, message: 'catch error', data: e + "" });
-	}
 }
 
 exports.chargeBeeUpdateNetwork = async (req, res) => {
