@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\FSP TRAINING\Differ-angular-node\angular\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! F:\Git_Project\Differ-angular-node\angular\src\polyfills.ts */"hN/g");
 
 
 /***/ }),

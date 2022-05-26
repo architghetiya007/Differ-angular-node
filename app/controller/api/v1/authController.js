@@ -24,6 +24,7 @@ exports.chargeBeeItemList = async (req, res) => {
 				console.log(error);
 				res.status(200).json({ status: false, code: 204, message: 'Error in getting from ', data: error });
 			} else {
+				console.log(result,"result");
 				res.status(200).json({ status: true, code: 200, message: 'List of item', data: result });
 			}
 		});
@@ -347,15 +348,27 @@ exports.chargeBeeCheckout = async (req, res) => {
 } 
 
 exports.chargeBeeGetNetwork = async (req, res) => {
-		const networkData = await axios.get(`http://management-interface.differ.ca/api/v1/customer/${req.user.id}/network`, {
+	try {
+		let networkData = await axios.get(`http://management-interface.differ.ca/api/v1/customer/${req.user.id}/network`, {
 			headers: {
 				'Authorization': '8d13c8d9e3c69876865973d69c3a01a2c03e2cbe6cb1f154350dee0132b74729'
 			}
-		}).then(( response ) => {
-			res.status(200).json({ status: true, code: 200, message: 'Network data',data:networkData.data });
-		}).catch((err) => {
-			console.log(err,"chargebee get network error >>>>>>>>>>>>>>>");
-		})
+		});
+		res.status(200).json({ status: true, code: 200, message: 'Network data',data:networkData.data });
+	} catch (err) {
+		console.log(err,"chargebee get network error >>>>>>>>>>>>>>>");		
+	}
+		// let networkData = await axios.get(`http://management-interface.differ.ca/api/v1/customer/${req.user.id}/network`, {
+		// 	headers: {
+		// 		'Authorization': '8d13c8d9e3c69876865973d69c3a01a2c03e2cbe6cb1f154350dee0132b74729'
+		// 	}
+		// })
+		// .then(async ( response ) => {
+		// 	console.log(networkData,"networkdata>>>>>>>>>");
+		// 	res.status(200).json({ status: true, code: 200, message: 'Network data',data:networkData.data });
+		// }).catch((err) => {
+		// 	console.log(err,"chargebee get network error >>>>>>>>>>>>>>>");
+		// })
 }
 
 exports.chargeBeeUpdateNetwork = async (req, res) => {

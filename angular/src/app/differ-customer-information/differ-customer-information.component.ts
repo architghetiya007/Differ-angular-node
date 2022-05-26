@@ -37,6 +37,11 @@ export class DifferCustomerInformationComponent implements OnInit {
     this.prefilledEmail();
   }
 
+  resetForm() {
+    this.InformationForm.reset();
+    this.prefilledEmail();
+  }
+
   prefilledEmail() {
     if(sessionStorage.getItem('email')) {
       this.InformationForm.patchValue({
